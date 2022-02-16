@@ -1,6 +1,6 @@
 #!/usr/bin/venv python
 
-from flask import Flask
+from flask import Flask, render_template
 import config
 import sqlite3
 
@@ -17,7 +17,11 @@ def db_conn():
 
 @app.route('/')
 def index():
-    return 'Index'
+    return render_template('index.html')
+
+# @app.route('/')
+# def index():
+#     return 'Index'
 
 
 if __name__ == '__main__':
