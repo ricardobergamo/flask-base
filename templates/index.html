@@ -1,26 +1,5 @@
-{% extends "base.html" %}
-
-{% block body %}
-{{ super() }}
+{% extends 'base.html' %}
 
 {% block content %}
-<div class="content-wrapper">
-
-{% block content_header %}
-<section class="content-header">
-
-    {% block header %}
-    <h1>
-    <small>{{ config.TITLE }}</small>
-    </h1>
-    {% endblock header %}
-
-    {%block breadcrumb %}
-    {% endblock breadcrumb %}
-
-</section>
-{% endblock content_header %}
-
-{% endblock content %}
-
-{% endblock body %}
+    <h4>Welcome to {{ config.NAME }} APP</h4>
+{% endblock %}

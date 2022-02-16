@@ -10,7 +10,7 @@ ENV_DIR = BASE_DIR + '/venv/py3'
 STATIC_DIR = BASE_DIR + '/static'
 
 # Aplicativo
-NAME = 'base'
+NAME = 'Base'
 AUTOR = 'Autor'
 TITLE = 'Flask APP'
 VERSAO = '0.1'

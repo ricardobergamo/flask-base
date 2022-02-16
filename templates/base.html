@@ -1,50 +1,32 @@
+
 <!DOCTYPE html>
-
-<html {% block html_attribs %} lang="pt_BR", xmlns="http://www.w3.org/1999/html"{% endblock html_attribs %}>
-
-{% block html %}
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} {{ config.TITLE }}</title>
 
-{% block head %}
-    <title>{% block title %} {{ config.TITLE }} {% endblock title %}</title>
-
-{% block metas %}
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-{% endblock metas %}
-
-{% block styles %}
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
- {% endblock styles %}
+
+    <style>
+        nav a {
+            color: #000000;
+            font-size: 2em;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+    </style>
 
 </head>
-{% endblock head %}
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">{{ config.TITLE }}</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
 
-{% block body %}
-<!--<body class="hold-transition skin-blue sidebar-mini">-->
-<body class="hold-transition skin-blue layout-boxed sidebar-mini">
-<div class="wrapper">
-
-{% block navbar %}
-<header class="main-header">
-</header>
-{% endblock navbar %}
-
-{% block sidebar %}
-{% endblock sidebar %}
-
-{% block scripts %}
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-{% endblock scripts %}
 
 </body>
-{% endblock body %}
-</div>
-
-{% block footer %}
-{% endblock footer %}
-
 </html>
-{% endblock html %}
