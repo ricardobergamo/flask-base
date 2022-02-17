@@ -1,32 +1,26 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %} {% endblock %} {{ config.TITLE }}</title>
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
 
-    <style>
-        nav a {
-            color: #000000;
-            font-size: 2em;
-            margin-left: 10px;
-            text-decoration: none;
-        }
-    </style>
+        <title>{{ config.TITLE }}</title>
+        {% endblock %}
+    </head>
+    <body>
+        <!-- Your page content -->
+        {% block content %}{% endblock %}
 
-</head>
-<body>
-    <nav>
-        <a href="{{ url_for('index') }}">{{ config.TITLE }}</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %} {% endblock %}
-    </div>
-
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-
-</body>
+        {% block scripts %}
+            <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+        {% endblock %}
+    </body>
 </html>

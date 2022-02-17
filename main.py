@@ -1,8 +1,10 @@
 from flask import Flask
+from flask_bootstrap import Bootstrap5
 import config
 import sqlite3
 
 app = Flask(__name__)
+bootstrap = Bootstrap5(app)
 app.config.from_object('config')
 app.config.from_pyfile('config.py', silent=True)
 
