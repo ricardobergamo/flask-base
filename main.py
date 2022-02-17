@@ -4,7 +4,6 @@ import config
 import sqlite3
 
 app = Flask(__name__)
-
 bootstrap = Bootstrap5(app)
 
 app.config.from_object('config')
