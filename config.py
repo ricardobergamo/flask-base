@@ -19,4 +19,4 @@ APP_DIR = '/var/www/htdocs/' + NAME
 # Sqlite Database
 DB_NAME = 'app.db'
 DB_DIR = BASE_DIR + '/database/'
-DB_CONN = sqlite3.connect(DB_DIR + DB_NAME)
+DB_PATH = DB_DIR + DB_NAME
