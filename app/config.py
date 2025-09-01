@@ -16,7 +16,9 @@ TITLE = 'Flask APP'
 VERSAO = '0.1'
 APP_DIR = '/var/www/htdocs/' + NAME
 
-# Sqlite Database
-DB_NAME = 'app.db'
-DB_DIR = BASE_DIR + '/database/'
-DB_PATH = DB_DIR + DB_NAME
+# PostgreSQL Database
+DB_NAME = 'sesa'
+DB_USER = 'postgres'
+DB_PASSWORD = 'postgres'
+DB_HOST = 'localhost'
+DB_PORT = '5432'
